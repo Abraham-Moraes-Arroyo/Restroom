@@ -1,0 +1,458 @@
+ <!-- Web page for UIC staff and students to find a bathroom nearby them  -->
+
+ <!doctype html>
+ <html lang="en">
+ 
+ 
+ <head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+ 
+   <title> University Restroom </title>
+ 
+   <!-- This makes sure that all of the screens are not seen when user loads page -->
+   <style>
+     .screen {
+       display: none;
+     }
+ 
+     .facebook {
+       padding: 20px;
+     }
+   </style>
+   <!-- This is to hide the template for the search section CARDS -->
+ 
+   <style>
+     .template {
+       display: none;
+     }
+   </style>
+ 
+ 
+ 
+ 
+ </head>
+ 
+ <body>
+ 
+   <!-- The following is what makes the different screens to be placed
+     think of them as seperate screens of information, but access only 
+     when clicked on  -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+       <div class="navbar-nav">
+         <!--Think of that as your topnav -->
+         <a data-screen="home" class="nav-item nav-link">Home</a>
+         <a data-screen="form" class="nav-item nav-link">Restrooms</a>
+         <a data-screen="pastServices" class="nav-item nav-link"> About</a>
+ 
+       </div>
+     </div>
+     <!-- the original screens where placed here-->
+   </nav>
+   <!--Here is where I am going to put the screens -->
+   <div id="content">
+ 
+ 
+ 
+     <!-- here is where I am going to be dropping the different pages/ screens -->
+ 
+ 
+     <!-- this is the home screen -->
+     <div class="screen" id="home">
+ 
+ 
+ 
+       <center>
+         <h1>Restrooms on UIC (East Campus)</h1>
+         <br>
+       </center>
+ 
+       <!-- Here is where you are going to place a photo of student campus and then include that you took the photo yourself -->
+       <center>
+         <img src="restroompagemainphoto.png" alt="home photo">
+         <!-- description of me taking the photo  -->
+         <a>
+ 
+           <div style='width: 130px; text-align: center;'>Photograph by Abraham Morales Arroyo</div>
+         </a>
+       </center>
+       <br>
+ 
+ 
+       <br>
+       <!--  end of the charasole code  -->
+ 
+ 
+ 
+       <!--   The end of the carosel, where I am going      -->
+ 
+       <!-- This is the columns where we are going to have the contents (Picture and description) -->
+       <div class="container">
+         <div class="row">
+           <div class="col">
+             <!-- this is the card -->
+             <div class="card">
+               <div class="card-body">
+                 <center>
+                   <img src="instruction.png" alt="for the user's needs" width="350" height="200">
+                 </center>
+               </div>
+             </div>
+             <!-- end of the card -->
+           </div>
+           <div class="col">
+             <!-- this is the card -->
+             <div class="card">
+               <div class="card-body">
+                 <!-- Place the photo here -->
+                 <center>
+                   <!--                         Drop the text here  -->
+                   <h1>Instructions</h1>
+                   <p> click on 'Restrooms' tab to see the restrooms that are availabe by your location on East Campus
+                   </p>
+                   <p>Please allow for location permission, as it would allow you to appear in the map and show you which
+                     restroom is clossest to you.</p>
+                 </center>
+               </div>
+             </div>
+             <!-- end of the card -->
+           </div>
+         </div>
+       </div>
+ 
+       <!-- there is going to be a break file in order to have the next carrosuel or atleast some content -->
+ 
+       <br>
+       <!-- we are going to have another 2 columsn where there is going to be estimates and what not, 
+ the in depth details are going to be in the other tab -->
+       <div class="container">
+         <div class="row">
+           <div class="col">
+             <h1><b>Estimates and Invoices</b></h1>
+             <p class="font-italic">We offer free estimates and provide service to your convinience, worry free.</p>
+           </div>
+           <div class="col">
+             <!--         place the hard working individual here -->
+             <center>
+               <img src="C5.jpg" alt="Estimates and invoices" width="450" height="400">
+             </center>
+           </div>
+         </div>
+       </div>
+     </div>
+ 
+ 
+     <!-- above is the end of the home screen -->
+ 
+ 
+ 
+     <!-- Here is the screen where you are going to have the map  -->
+     <div class="screen" id="form">
+       <!--       the map and the title is going to be here, make sure to structure it later at a later time  -->
+       <div id="googleMap" style="width:100%;height:400px;"></div>
+ 
+       <script>
+        let map;
+         function myMap() {
+           var mapProp = {
+             center: new google.maps.LatLng(41.87189, -87.64926),
+             zoom: 18,
+           };
+        //    navigator.geolocation.watchPosition(showPosition);
+        map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+           if(navigator.geolocation){
+                navigator.geolocation.watchPosition(showPosition);
+           }
+         }
+
+         function showPosition(position){
+            let cityCircle=new google.maps.Circle({
+                strokeColor: "#FF0000",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#FF0000",
+                fillOpacity: 0.35,
+                map,
+                center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude),
+                radius: 30,
+            });
+            map.setCenter(new google.maps.LatLng(position.coords.latitude,position.coords.longitude));
+         }
+       </script>
+ 
+       <script
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5JoDcQszq0LsZMmY-cbLJBEixq-GCGPQ&callback=myMap"></script>
+ 
+     </div>
+ 
+     <!-- Yeah, basically of the highlights are going to be here   -->
+ 
+     <!-- 
+ // this is the layout of the cards 
+ <div class="card bg-light mb-3" style="max-width: 31rem;">
+           <div class="card-body">
+             <h5 class="card-title"></h5>
+             <p class="card-text">
+               
+                 
+             </p>
+           </div>
+         </div>
+ 
+ 
+  -->
+ 
+ 
+     <!--       This is the screen where we are going to have some of the past work be posted, not sure if to include details upon the work  -->
+     <div class="screen" id="pastServices">
+       <center>
+         <br>
+         <h1> Past Work </h1>
+         <br>
+       </center>
+       <!-- Here is the grid system -->
+       <div class="container">
+         <div class="row">
+           <div class="col">
+             1 of 3
+             <!--       start of the card -->
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="P1.jpg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+             <!--       end of the card -->
+ 
+             <br>
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="P4.jpg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+             <br>
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="GroundPhoto2.jpeg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+             <br>
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="GroundPhoto5.jpeg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+             <br>
+ 
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="ElectricConduitInstall.jpeg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+ 
+           </div>
+           <!--     end of the 1st column -->
+ 
+           <!--     start of the second column -->
+           <div class="col">
+             2 of 3
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="P2.jpg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+             <br>
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="LightCounter.jpeg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+ 
+             <br>
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="GroundPhoto3.jpeg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+             <br>
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="GroundPhoto6.jpeg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+             <br>
+ 
+           </div>
+           <!-- End of the second coumn  -->
+ 
+           <div class="col">
+             3 of 3
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="P3jpg.jpg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+             <br>
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="GroundPhoto1.jpeg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+ 
+             <br>
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="GroundPhoto4.jpeg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+             <br>
+             <div class="card" style="width: 18rem;">
+               <img class="card-img-top" src="RecessedLightInstall.jpeg" alt="Card image cap">
+               <div class="card-body">
+                 <h5 class="card-title">Card title</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                   card's content.</p>
+                 <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+             </div>
+             <br>
+ 
+ 
+           </div>
+ 
+         </div>
+       </div>
+       <!-- End of the grid system -->
+     </div>
+ 
+     <!--    End of the past services screen -->
+ 
+ 
+     <!-- Here is where the top button code is going to be placed just to avoid having it pop up to a column -->
+     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+ 
+ 
+ 
+ </body>
+ <!-- Here is where the typescript is going to be, that makes the screens visible-->
+ <script>
+   // This will make sure that the home screen is always being shown 
+   document.querySelector("#home").style.display = "block";
+ 
+   let navAnchors = document.querySelectorAll("div#navbarNavAltMarkup a")
+ 
+   navAnchors.forEach((anchor) => {
+     anchor.addEventListener("click", (event) => {
+ 
+       //hides all the screens first
+       document.querySelectorAll(".screen").forEach((screen) => {
+         screen.style.display = "none";
+       });
+       //read data screen attribute  
+       let screen = event.target.getAttribute("data-screen");
+ 
+       //find relevant screen
+       let targetScreen = document.querySelector("#" + screen);
+ 
+       //show it 
+       targetScreen.style.display = "block";
+     })
+   })
+ 
+ 
+ 
+   // the top button
+   //Get the button
+   var mybutton = document.getElementById("myBtn");
+ 
+   // When the user scrolls down 20px from the top of the document, show the button
+   window.onscroll = function () {scrollFunction()};
+ 
+   function scrollFunction() {
+     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+       mybutton.style.display = "block";
+     } else {
+       mybutton.style.display = "none";
+     }
+   }
+ 
+   // When the user clicks on the button, scroll to the top of the document
+   function topFunction() {
+     document.body.scrollTop = 0;
+     document.documentElement.scrollTop = 0;
+   }
+ 
+ 
+ 
+ </script>
+ 
+
+ 
+ 
+ 
+ <!--   More script from the bootstrap page -->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="/docs/4.0/assets/js/vendor/popper.min.js"
+   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ 
+ </html>
