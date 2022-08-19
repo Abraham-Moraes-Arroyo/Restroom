@@ -83,16 +83,11 @@
       </center>
 
       <!-- Here is where you are going to place a photo of student campus and then include that you took the photo yourself -->
-      <h1>Legend:</h1>
-      <br>
+      
 
 
       <br>
-      <!--  end of the charasole code  -->
-
-
-
-      <!--   The end of the carosel, where I am going      -->
+     
 
       <!-- This is the columns where we are going to have the contents (Picture and description) -->
       <div class="container">
@@ -102,6 +97,7 @@
             <div class="card">
               <div class="card-body">
                 <center>
+                  <h1>Legend:</h1>
                   <img src="redCircle.png" alt="for the user's needs" width="350" height="200">
                 </center>
               </div>
@@ -121,6 +117,8 @@
                   </p>
                   <p>Please allow for location permission, as it would allow you to appear in the map and show you which
                     restroom is clossest to you.</p>
+                    <p>for ios users: </p>
+                    <p>settings -> Privacy -> Location Services (have it turned on)-> Safari Websites-> While Using App</p>
                 </center>
               </div>
             </div>
@@ -296,7 +294,7 @@
             fillOpacity: 0.35,
             map,
             center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-            radius: 30,
+            radius: 5,
           });
           map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
         }
@@ -377,7 +375,9 @@
         </div>
       </center>
       <!-- end of the two columns  -->
+      <center>
       <p>Created by Abraham Morales Arroyo with the help of Cassandra Marin</p>
+      </center>
     </div>
 
     <!--    End of the past services screen -->
