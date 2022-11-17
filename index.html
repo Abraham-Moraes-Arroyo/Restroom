@@ -23,12 +23,10 @@ projects.  -->
     .screen {
       display: none;
     }
-
-    
   </style>
   <!-- This is to hide the template for the search section CARDS -->
 
-  
+
 
 
 
@@ -72,14 +70,24 @@ projects.  -->
 
 
       <center>
+
+        <!-- this is the warning that allows the user to understand that the webpage is currently down, and that it would be fixed in the future -->
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Alert!</strong> The webpage's map is currently down, but the list of washrooms is still available.
+          Scroll lower to see the list.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
         <h1>Restrooms on UIC (East Campus)</h1>
         <div id="googleMap" style="width:100%;height:400px;"></div>
 
         <br>
-      </center>      
+      </center>
 
       <br>
-     
+
 
       <!-- This is the columns where we are going to have the contents (Picture and description) -->
       <div class="container">
@@ -109,8 +117,9 @@ projects.  -->
                   </p>
                   <p>Please allow for location permission, as it would allow you to appear in the map and show you which
                     restroom is clossest to you.</p>
-                    <p>for ios users: </p>
-                    <p>settings -> Privacy -> Location Services (have it turned on)-> Safari Websites-> While Using App</p>
+                  <p>for ios users: </p>
+                  <p>settings -> Privacy -> Location Services (have it turned on)-> Safari Websites-> While Using App
+                  </p>
                 </center>
               </div>
             </div>
@@ -122,121 +131,134 @@ projects.  -->
         <!-- Here is where you are going to be placing in detail the bathrooms based on order of building -->
         <br>
         <center>
-            <div class="card">
-                <div class="card-body">
-                  <h1>There are no washrooms in any of the Lecture Centers</h1>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>Grant Hall</h1>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>Stevenson Hall</h1>
-                  <p>(All-Gender) 2nd floor, room 204A, near the elevator</p>
-                  <p>(men, women) 2nd floor</p>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>University Hall </h1>
-                  <p>(All-Gender) 4th floor, near Room 430</p>
-                  <p>11th floor, across room 1159</p>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                    <h1>Douglas Hall</h1>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>Student Center East Tower</h1>
-                  <p>(All-Gender) 8th floor, room 802, and room  803</p>
-                  <p>4th floor, around the elevators</p>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>Student Cetner East Building</h1>
-                  <p>(both men, women)In commuter center, requires i-card swipe</p>
-                  <p>(both men, women)2nd floor of SCE, next to Amazon room</p>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>Taft Hall</h1>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>Burnham Hall</h1>
-                  <p>(All-Gender) 2nd floor, room 214 and room 216</p>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>UIC Library</h1>
-                  <p>(All-Gender) 2nd floor, room 2343, sout end of the Library</p>
-                  <p>1st floor (men, women), east side of the building (towards the back of the building) </p>
-                  <p>2nd floor (men, women), right when you get off the escalator </p>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>SES</h1>
-                  <p>(All-Gender) 2nd floor, 2112A, and 2212B</p>
-                  <p>(All-Gender) 3rd floor, 3112A, and 3112B</p>
-                </div>
-              </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-body">
-                  <h1>Lincoln Hall</h1>
-                  <p>(men, women) Second floor by the stairs closest to bridge </p>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>Uic Business</h1>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>The ARC </h1>
-                  <p>(men, women) 1st floor before the elevators, (kind of hidden honestly)</p>
-                  <p>(men, women) 2nd floor, between the waterfountains, there will be tunnel that will lead into them </p>
-                </div>
-              </div>
-            <br>
-            <div class="card">
-                <div class="card-body">
-                  <h1>BSB</h1>
-                  <p>(All-Gender) 1st floor, room 1004 (nest to men's bathroom)</p>
-                  <p>(All-Gender)2nd floor, Room 2003 </p>
-                </div>
-              </div>
-            <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>There are no washrooms in any of the Lecture Centers</h1>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>Grant Hall</h1>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>Stevenson Hall</h1>
+              <p>(All-Gender) 2nd floor, room 204A, near the elevator</p>
+              <p>(men, women) 2nd floor</p>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>University Hall </h1>
+              <p>(All-Gender) 4th floor, near Room 430</p>
+              <p>11th floor, across room 1159</p>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>Douglas Hall</h1>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>Student Center East Tower</h1>
+              <p>(All-Gender) 8th floor, room 802, and room 803</p>
+              <p>4th floor, around the elevators</p>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>Student Cetner East Building</h1>
+              <p>(both men, women)In commuter center, requires i-card swipe</p>
+              <p>(both men, women)2nd floor of SCE, next to Amazon room</p>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>Taft Hall</h1>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>Burnham Hall</h1>
+              <p>(All-Gender) 2nd floor, room 214 and room 216</p>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>UIC Library</h1>
+              <p>(All-Gender) 2nd floor, room 2343, sout end of the Library</p>
+              <p>1st floor (men, women), east side of the building (towards the back of the building) </p>
+              <p>2nd floor (men, women), right when you get off the escalator </p>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>SES</h1>
+              <p>(All-Gender) 2nd floor, 2112A, and 2212B</p>
+              <p>(All-Gender) 3rd floor, 3112A, and 3112B</p>
+            </div>
+          </div>
+          <br>
+
+          <div class="card">
+            <div class="card-body">
+              <h1>Lincoln Hall</h1>
+              <p>(men, women) Second floor by the stairs closest to bridge </p>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>Uic Business</h1>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>The ARC </h1>
+              <p>(men, women) 1st floor before the elevators, (kind of hidden honestly)</p>
+              <p>(men, women) 2nd floor, between the waterfountains, there will be tunnel that will lead into them </p>
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>BSB</h1>
+              <p>(All-Gender) 1st floor, room 1004 (nest to men's bathroom)</p>
+              <p>(All-Gender)2nd floor, Room 2003 </p>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <h1>SEO </h1>
+              <p>1st floor </p>
+              <p>2nd floor </p>
+              <p>5th floor </p>
+              <p>8th floor </p>
+              <p>11th floor </p>
+              <p>13th floor </p>
+            </div>
+          </div>
+          <br>
         </center>
-        
+
       </div>
 
-      
+
 
       <br>
       <!-- Here is where we are going to have the list of bathrooms in the uic campus east -->
@@ -326,24 +348,30 @@ projects.  -->
               <!-- this is where the small Bio is going  -->
               <div class="card">
                 <div class="card-body">
-                  <p>Hello, my name is Abraham Morales. My main reason to creating this is because during my first year of college I didn't know where the washrooms where, so I ended up going to busy restrooms where it would often be packed. 
-                    However, with this website, I have listed washrooms that are across East Campus, so students (including you :) ) could go to take care of your needs</p>
-                    <br>
-                    <p>All photos have been taken by me, and I have created this web page based on my own idea. I don't mean to cause harm to UIC, I had made this to help new staff, students, but for also returning students and staff members</p>
-                    <br>
-                    <p>I am looking for a job as a programmer, so if you know any open roles or need to create a page or make an idea happen I am glad to conenct with you through email. </p>
+                  <p>Hello, my name is Abraham Morales. My main reason to creating this is because during my first year
+                    of college I didn't know where the washrooms where, so I ended up going to busy restrooms where it
+                    would often be packed.
+                    However, with this website, I have listed washrooms that are across East Campus, so students
+                    (including you :) ) could go to take care of your needs</p>
+                  <br>
+                  <p>All photos have been taken by me, and I have created this web page based on my own idea. I don't
+                    mean to cause harm to UIC, I had made this to help new staff, students, but for also returning
+                    students and staff members</p>
+                  <br>
+                  <p>I am looking for a job as a programmer, so if you know any open roles or need to create a page or
+                    make an idea happen I am glad to conenct with you through email. </p>
                 </div>
               </div>
               <br>
               <!-- here is my connecting cards and final good byes  -->
               <div class="card">
                 <div class="card-body">
-                    <a href="https://www.linkedin.com/in/abraham1/">
-                        <br>
-                    <button type="button" class="btn btn-warning">Network with me in LinkedIn</button>
-                    </a>
+                  <a href="https://www.linkedin.com/in/abraham1/">
                     <br>
-                    <a href="mailto:amoral59@uic.edu" class="btn btn-primary">Email me :) </a>
+                    <button type="button" class="btn btn-warning">Network with me in LinkedIn</button>
+                  </a>
+                  <br>
+                  <a href="mailto:amoral59@uic.edu" class="btn btn-primary">Email me :) </a>
 
                 </div>
               </div>
